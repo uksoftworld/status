@@ -35,11 +35,6 @@ async def on_ready():
     print('Created by Utkarsh')
     client.loop.create_task(status_task())
 
-@client.command(pass_context = True)
-@commands.check(is_owner)
-async def restart():
-    await client.logout()
-
 @client.event
 async def on_message(message):
 	await client.process_commands(message)
